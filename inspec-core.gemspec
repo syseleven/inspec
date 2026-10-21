@@ -33,7 +33,7 @@ This is the Cinc Auditor build of this gem, distributed by the Cinc Project unde
   spec.add_dependency "license-acceptance",       ">= 0.2.13", "< 3.0"
   # TODO: We should remove the thor pinning in next upcoming releases currently it's breaking our unit test in cli_args_test for aliases due to
   # recent changes made in thor library REF: https://github.com/rails/thor/releases/tag/v1.3.0 & https://github.com/rails/thor/pull/800
-  spec.add_dependency "thor",                     ">= 0.20", "< 1.5.0"
+  spec.add_dependency "thor",                     "~> 1.5.0"
   spec.add_dependency "method_source",            ">= 0.8", "< 2.0"
   spec.add_dependency "rubyzip",                  ">= 2.4.1", "< 4.0"
   spec.add_dependency "rspec",                    ">= 3.9", "<= 3.14"
@@ -64,7 +64,7 @@ This is the Cinc Auditor build of this gem, distributed by the Cinc Project unde
   # This was initially included in 'inspec.gemspec' to keep 'chef-client' lightweight.
   # However, it has been moved to 'inspec-core.gemspec' due to a dependency on the 'ast' gem,
   # which was causing a LoadError ('cannot load such file -- ast') for users/applications using 'inspec-core'.
-  spec.add_dependency "cookstyle"
+  # spec.add_dependency "cookstyle"
 
   spec.add_dependency "train-core", "~> 3.16", ">= 3.16.5"
   # Minimum major version 1 is required for Chef licensing telemetry
