@@ -73,7 +73,7 @@ describe "Telemetry" do
       runner.run
       _(tm.run_ending_payload).wont_be_empty
       _(tm.run_ending_payload).must_be_kind_of Hash
-      _(tm.run_ending_payload[:source]).must_match(/^inspec:\d+\.\d+\.\d+$/)
+      _(tm.run_ending_payload[:source]).must_match(/^cinc-auditor:\d+\.\d+\.\d+(?:\.\d+)?$/)
       _(tm.run_ending_payload[:licenseIds]).wont_be_empty
       _(tm.run_ending_payload[:createdTimeUTC]).must_match(REGEX[:datetime])
       _(tm.run_ending_payload[:type]).must_match(/^job$/)

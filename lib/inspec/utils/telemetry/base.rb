@@ -148,7 +148,9 @@ module Inspec
         return value_str if value_str =~ uuid_format
 
         hex_64_format = /^[0-9a-fA-F]{64}$/i
-        return value_str unless value_str =~ hex_64_format
+        # Anything that isn't already a 64-char hex ID gets hashed first, so the
+        # result is a stable UUID for the same input on every run.
+        value_str = Digest::SHA256.hexdigest(value_str) unless value_str =~ hex_64_format
 
         bytes = value_str[0, 32].scan(/.{2}/).map { |byte| byte.to_i(16) }
 
